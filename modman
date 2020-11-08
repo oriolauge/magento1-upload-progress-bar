@@ -1,0 +1,6 @@
+/app/code/community/Oag/UploadProgressBar
+/app/design/frontend/base/default/layout/oag_uploadprogressbar.xml
+/app/design/frontend/base/default/template/oag_uploadprogressbar
+/skin/frontend/base/default/js/oag_uploadprogressbar
+/skin/frontend/base/default/css/oag_uploadprogressbar
+/app/etc/modules/* app/etc/modules/

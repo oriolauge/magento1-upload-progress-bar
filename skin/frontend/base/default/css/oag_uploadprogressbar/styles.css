@@ -1,0 +1,19 @@
+#oag-uploadprogressbar {
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+#oag-progressbar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    animation: strike 2s linear .3s 1 forwards;
+}
+
+#oag-uploadprogressbar-error, #oag-uploadprogressbar {
+    margin: 1em 0;
+}
+
+#oag-uploadprogressbar-error {
+    color: red;
+}
