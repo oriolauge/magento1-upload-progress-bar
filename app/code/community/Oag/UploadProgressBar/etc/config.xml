@@ -47,5 +47,14 @@
                 </oag_uploadprogressbar>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Oag_UploadProgressBar>
+                    <files>
+                        <default>Oag_UploadProgressBar.csv</default>
+                    </files>
+                </Oag_UploadProgressBar>
+            </modules>
+        </translate>
     </frontend>
 </config>

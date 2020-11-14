@@ -4,3 +4,5 @@
 /skin/frontend/base/default/js/oag_uploadprogressbar
 /skin/frontend/base/default/css/oag_uploadprogressbar
 /app/etc/modules/* app/etc/modules/
+app/locale/en_US/Oag_UploadProgressBar.csv
+app/locale/es_ES/Oag_UploadProgressBar.csv

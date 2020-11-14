@@ -23,18 +23,18 @@ var OagUploadProgressBar = {
         }
 
         //Remove error messages if we try to upload a file in the past
-        let oagUploadProgressBarErrorDiv = $j('#oag-uploadprogressbar-error');
+        const oagUploadProgressBarErrorDiv = $j('#oag-uploadprogressbar-error');
         if (oagUploadProgressBarErrorDiv.length >= 1) {
             oagUploadProgressBarErrorDiv.remove();
         }
 
-        let myForm = document.getElementById('product_addtocart_form');
-        let data = new FormData(myForm);
+        const myForm = document.getElementById('product_addtocart_form');
+        const data = new FormData(myForm);
 
-        let oagUploadProgressBar = $j('#oag-uploadprogressbar')
-        let parentdiv = $j(el).parent();
+        const oagUploadProgressBar = $j('#oag-uploadprogressbar')
+        const parentdiv = $j(el).parent();
         if (oagUploadProgressBar.length < 1) {
-            parentdiv.append('<div id="oag-uploadprogressbar"><div id="oag-progressbar"></div></div>')
+            parentdiv.append('<div id="oag-uploadprogressbar"><div id="oag-progressbar"><span id="oag-percentcomplete"></span></div></div>')
         }
         
         $j.ajax({
@@ -45,18 +45,19 @@ var OagUploadProgressBar = {
             contentType: false,
             processData: false,
             xhr: function() {
-                let xhr = new window.XMLHttpRequest();
+                const xhr = new window.XMLHttpRequest();
                 xhr.upload.addEventListener("progress", function(event) {
                     if (event.lengthComputable) {
                         let percentComplete = event.loaded / event.total;
                         percentComplete = parseInt(percentComplete * 100);
-                        $j('#oag-progressbar').animate({ width: percentComplete + '%' }, 100);
+                        $j('#oag-progressbar').css('width', percentComplete  + '%');
+                        $j('#oag-percentcomplete').text(percentComplete + '%');
                     }
                 }, false);
                 return xhr;
             }
         }).done(function(result) {
-            let resultJson = $j.parseJSON(result);
+            const resultJson = $j.parseJSON(result);
             if (resultJson.status == 'error' && !resultJson.redirect_url) {
                 OagUploadProgressBar.showErrorMessage(resultJson.message, parentdiv);
             } else if (resultJson.redirect_url) {
@@ -65,7 +66,7 @@ var OagUploadProgressBar = {
         }).fail(function(result) {
             let errorMessage = '';
             if (result.status == 413) {
-                errorMessage = 'The file is too large to be processed by the web server. Please, try to resize it and try again';
+                errorMessage = Translator.translate('The file is too large to be processed by the web server. Please, try to resize it and try again.');
             } else {
                 errorMessage = result.statusText;
             }
