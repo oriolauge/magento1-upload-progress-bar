@@ -3,6 +3,7 @@
 $j(document).ready(function () {
     if ($j('.product-custom-option[type="file"]').length > 0) {
         Translator.add('The file is too large to be processed by the web server. Please, try to resize it and try again.', '<?php echo $this->__('The file is too large to be processed by the web server. Please, try to resize it and try again.') ?>');
+        Translator.add('File uploaded successfully. Please wait...', '<?php echo $this->__('File uploaded successfully. Please wait...') ?>');
         const oagUploadProgressBarCheckoutUrl = '<?php echo $this->getUploadProgressBarAddToCartUrl(); ?>';
         OagUploadProgressBar.init(oagUploadProgressBarCheckoutUrl);
     }
