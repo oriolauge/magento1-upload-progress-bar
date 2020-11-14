@@ -52,6 +52,10 @@ var OagUploadProgressBar = {
                         percentComplete = parseInt(percentComplete * 100);
                         $j('#oag-progressbar').css('width', percentComplete  + '%');
                         $j('#oag-percentcomplete').text(percentComplete + '%');
+                        if (percentComplete == 100) {
+                            const uploadMessage = Translator.translate('File uploaded successfully. Please wait...');
+                            $j('#oag-percentcomplete').text(uploadMessage);
+                        }
                     }
                 }, false);
                 return xhr;
@@ -61,8 +65,6 @@ var OagUploadProgressBar = {
             if (resultJson.status == 'error' && !resultJson.redirect_url) {
                 OagUploadProgressBar.showErrorMessage(resultJson.message, parentdiv);
             } else if (resultJson.redirect_url) {
-                const uploadMessage = Translator.translate('File uploaded successfully. Please wait...');
-                $j('#oag-percentcomplete').text(uploadMessage);
                 window.location.href = resultJson.redirect_url;
             }
         }).fail(function(result) {
