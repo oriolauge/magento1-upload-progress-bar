@@ -8,10 +8,16 @@
     height: 30px;
     background-color: green;
     animation: strike 2s linear .3s 1 forwards;
+    text-align: right;
+}
+
+#oag-percentcomplete {
+    display: block;
+    padding: 4px 10px;
 }
 
 #oag-uploadprogressbar-error, #oag-uploadprogressbar {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 
 #oag-uploadprogressbar-error {

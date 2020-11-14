@@ -20,7 +20,7 @@
 <config>
     <modules>
         <Oag_UploadProgressBar>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </Oag_UploadProgressBar>
     </modules>
     <global>
@@ -47,5 +47,14 @@
                 </oag_uploadprogressbar>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Oag_UploadProgressBar>
+                    <files>
+                        <default>Oag_UploadProgressBar.csv</default>
+                    </files>
+                </Oag_UploadProgressBar>
+            </modules>
+        </translate>
     </frontend>
 </config>
