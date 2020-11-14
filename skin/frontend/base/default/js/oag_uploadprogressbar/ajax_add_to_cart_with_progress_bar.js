@@ -61,6 +61,8 @@ var OagUploadProgressBar = {
             if (resultJson.status == 'error' && !resultJson.redirect_url) {
                 OagUploadProgressBar.showErrorMessage(resultJson.message, parentdiv);
             } else if (resultJson.redirect_url) {
+                const uploadMessage = Translator.translate('File uploaded successfully. Please wait...');
+                $j('#oag-percentcomplete').text(uploadMessage);
                 window.location.href = resultJson.redirect_url;
             }
         }).fail(function(result) {
