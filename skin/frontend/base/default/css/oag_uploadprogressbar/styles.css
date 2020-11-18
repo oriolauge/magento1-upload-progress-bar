@@ -5,10 +5,11 @@
 
 #oag-progressbar {
     width: 1%;
-    height: 30px;
+    min-height: 30px;
     background-color: green;
     animation: strike 2s linear .3s 1 forwards;
     text-align: right;
+    color: #fff;
 }
 
 #oag-percentcomplete {
