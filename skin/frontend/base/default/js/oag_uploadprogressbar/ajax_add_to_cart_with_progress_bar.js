@@ -53,7 +53,7 @@ var OagUploadProgressBar = {
                         $j('#oag-progressbar').css('width', percentComplete  + '%');
                         $j('#oag-percentcomplete').text(percentComplete + '%');
                         if (percentComplete == 100) {
-                            const uploadMessage = Translator.translate('File uploaded successfully. Please wait...');
+                            const uploadMessage = Translator.translate('This action may take some MINUTES. Please be patient still the file is placed in the cart');
                             $j('#oag-percentcomplete').text(uploadMessage);
                         }
                     }
